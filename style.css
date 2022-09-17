@@ -1,0 +1,14 @@
+html section main{
+    background-color: #B7C4CF;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Combo&family=Permanent+Marker&display=swap');
+
+.nama-nav{
+    font-family: 'Permanent Marker', cursive;
+}
+
+
+section{
+    font-family: 'Combo', cursive;
+}
