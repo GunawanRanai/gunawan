@@ -63,9 +63,28 @@
                 <div class="shadow mx-5 ">
                     <br><br><br>
                     <ol class="mx-5">
-                        <li class="mb-md-2">Update Ubuntu Server</li>
+                        <p> &ensp; Pada tutorial ini menggunakan 1 OS Ubuntu server yang dipakai sekaligus sebagai Web Server dan Database Server. Dengan
+                        paket yang diperlukan pada OS adalah apache2, php, php-mysql, mysql-server, mysql-client, dan source wordpress untuk di
+                        install.
+                        Berikut langkah langkahnya :
+                        <li class="mb-md-2">
+                            Topologi implementasi OS
+                            <div class="col-lg-9">
+                                <img src="images/topologi 11.jpg" alt="" class="img-thumbnail">
+                            </div>
+                            <p>&ensp; Dimana pada bagian ini web server dan database server digabung OS sistemnya menjadi satu kesatuan yang sama.</p>
+                        </li>
+</p>
+                        <li class="mb-md-2">Update Ubuntu Server
+                            <br><p>Agar patch yang dimiliki Ubuntu adalah yang terbaru.</p>
+                            <code>apt update</code>
+                            <div class="col-lg-9">
+                                <img src="images/2.png" alt="" class="img-thumbnail">
+                            </div>
+                        </li>
                         <li class="mb-md-2">Install Resource apache2 untuk Web Server Ubuntu dan cek statusnya
-                            <br><code>
+                            <p>&ensp; apache2 berfungsi sebagai pemberi layanan halaman web.</p>
+                            <code>
                                                                                                     sudo apt install apache2 <br>
                                                                                                     apache2.service
                                                                                                 </code>
@@ -74,7 +93,13 @@
                             </div>
                         </li>
                         <li class="mb-md-2">Install resource Database Server
-                            <br><code>
+                            <p>&ensp; Mariadb dan mysql sama sama merupakan software yang berfungsi untuk mengelola database.
+                            Mysql-server merupakan paket yang dimiliki dimungkinkan untuk menjalankan server MySql yang dapat menjadi host beberapa
+                            basis data dan memproses basis data tersebut.
+                            Mysql-client merupakan program yang digunakan untuk berkomunikasi pada server untuk mengelola informasi yang di kelola
+                            oleh web server.
+</p>
+                            <code>
                                                                                                     apt install mariadb-server mariadb-client <br>
                                                                                                     atau mysql-server mysql-client
                                                                                                 </code>
@@ -92,7 +117,11 @@
                             </div>
                         </li>
                         <li class="mb-md-2">Menginstall PHP8
-                            <br><code>apt install php php-mysql</code>
+                            <p> &ensp; Menginstall PHP8 agar nanti wordpress bisa dipakai,Php merupakan bahasa pemrograman yang berjalan pada server-side scripting, dimana fungsinya bisa menjadi pengembangan
+                            website agar lebih dinamis dan bisa menyesuaikan dengan berbagai kondisi.
+                            Php-mysql sebuah paket atau sofware menyediaakan modul mysql untuk Php.
+ </p>
+                            <code>apt install php php-mysql</code>
                             <div class="col-lg-9"><img src="images/5a.png" alt="" class="img-thumbnail"></div>
                         </li>
                         <li class="mb-md-2">Menginstall Wordpress
@@ -166,6 +195,13 @@
                     <ol class="mx-5">
                         <p class="text-center">Mengatur Database Server</p>
                         <hr>
+                        <li class="mb-md-2">
+                            Topologi implementasi OS
+                            <div class="col-lg-9">
+                                <img src="images/topologi.jpg" alt="" class="img-thumbnail">
+                            </div>
+                            <p>&ensp; Pada gambar diatas menggambarkan bahwa kita akan membuat sebuah sistem dimana satu Database Server akan menyimpan data data dari Web Server 1 hingga Web Server 3.</p>
+                        </li>
                         <li class="mb-md-2">
                             Update OS Ubuntu Server
                             <br><code>sudo apt Update
