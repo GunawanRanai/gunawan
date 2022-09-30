@@ -352,7 +352,8 @@
                                     </tbody>
                                 </table>
                                 <h3>Implementasi Pemberian Hak Akses</h3>
-                                <p>Dalam implementasi ini saya akan menggunakan daabase dengan nama MovieIndustry12, dengan table sebagai berikut.</p>
+                                <p>Pada kesempatan ini saya akan memberikan implementasi pemberian hak akses pada beberapa IP Address host yang berbeda,
+                                dengan memanfaatkan data dari database MovieIndustry12. Dengan tabel dan deskripsi table sebagai berikut.</p>
                                 <img src="images/ACL/1.png" class="img-fluid mb-lg-3" alt="">
 
                                 <p>dengan data pada tiap table sebagai berikut.</p>
@@ -363,12 +364,14 @@
 
                                 <h3>Contoh Kondisi</h3>
                                 <h4>Kondisi 1</h4>
-                                <p>Dengan memberikan semua hak namun user tersebut hanya bisa mengakses satu jenis table saja dalam satu database.</p>
+                                <p>Pada kondisi pertama ini saya memberikan semua hak pada user dan host dengan IP 192.168.20.3, dengan kondisi user
+                                tersebut bisa mengakses satu jenis tabel pada 1 database.</p>
                                 <img src="images/ACL/6.png" class="img-fluid mb-lg-3" alt="">
                                 <p>Sehingga user1 hanya bisa mengakses database MovieIndustry12 dengan hak penuh pada semua field pada table studio.</p>
                                 <img src="images/ACL/7.png" class="img-fluid mb-lg-3" alt="">
-                                <p>Selanjutnya login dengan user yang telah dibuat tadi dengan perintah
-                                    <br><code>mysql -u user1 -p</code>
+                                <p>Selanjutnya pada Operasi Sistem IP 192.168.20.3, lakukan login ke mysql dengan perintah .
+                                    <br><code>mysql – u user1 – h 192.168.20.4
+                                    – p</code>
                                 </p>
                                 <img src="images/ACL/8.png" class="img-fluid mb-lg-3" alt="">
 
@@ -379,7 +382,7 @@
                                 <img src="images/ACL/9.png" class="img-fluid mb-lg-3" alt="">
                                 <h5>Skema 2</h5>
                                 <p>user mengganti data field pada table Studio
-                                    <br><code>UDAPTE Studio SET pres='Gunawan' WHERE name='Jelita Sejuba';</code>
+                                    <br><code>UPDATE Studio SET pres='Gunawan' WHERE name='Jelita Sejuba';</code>
                                 </p>
                                 <img src="images/ACL/10.png" class="img-fluid mb-lg-3" alt="">
                                 <p>Dalam skema ini user masih bisa mengubah data pada table Studio dikarenakan masih memiliki akses terhadap table tersebut.</p>
@@ -393,7 +396,10 @@
                                 <img src="images/ACL/12.png" class="img-fluid mb-lg-3" alt="">
 
                                 <h4>Kondisi 2</h4>
-                                <p>Dengan user2 ini hanya bisa view database, table, field, dan bisa menambahakan data namun tidak untuk mengubah data
+                                <p>Pada kondisi dua ini saya memberikan hak akses ke IP Address 192.168.20.5 dengan nama user adalah user2. Kondisi yang
+                                diberikan yaitu user2 hanya bisa melihat database, tabel, kolom dan hanya bbisa menambahkan data namun tidak bisa
+                                mengubah data. Dengan perintah yang bisa dilakukan adalah 
+                                .
                                     <br><code>GRANT SELECT, INSERT ON MovieIndustry12.* TO user2@localhost;</code>
                                 </p>
                                 <img src="images/ACL/13.png" class="img-fluid mb-lg-3" alt="">
@@ -421,8 +427,9 @@
                                 <img src="images/ACL/18.png" class="img-fluid mb-lg-3" alt="">
 
                                 <h4>Kondisi 3</h4>
-                                <p>user3 hanya bisa mengedit data dalam beberapa kolom/field tertentu pada table tertentu.
-                                    <br><code>GRANT SELECT(name,gender), UPDATE(birthplace) ON MovieIndustry12.MovieStar TO user3@localhost;</code>
+                                <p>user3 hanya bisa mengedit data dalam beberapa kolom/field tertentu pada table tertentu. Dengan perintah 
+                                    <br><code>GRANT
+                                    SELECT(name,gender), UPDATE(birthplace) ON MovieIndustry12.MovieStar TO user3@192.168.20.6 ;.</code>
                                 </p>
                                 <img src="images/ACL/19.png" class="img-fluid mb-lg-3" alt="">
 
