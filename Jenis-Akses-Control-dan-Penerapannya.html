@@ -168,12 +168,10 @@
                                 hak akses yang diberikan.</p>
                                 <p>Dengan perintah sebagai berikut :</p>
                                 <code>CREATE USER user1@192.168.20.3 IDENTIFIED BY 'user1';<br>
-                                GRANT ALL ON MovieIndustry.* TO user1@192.168.20.3;<br>
-</code> 
+                                GRANT ALL ON MovieIndustry.* TO user1@192.168.20.3;<br></code> 
                                 <img src="images/tugas5/1.png" class="img-fluid mb-lg-3" alt="">
                                 <p>Untuk pembuktian bahwa user tersebut hanya bisa mengkakses database yang diberikan hak akses saja, berikut gambar yang
-                                menampilkan daftar database pada user root, dan database pada user1
-</p>
+                                menampilkan daftar database pada user root, dan database pada user1</p>
                                 <p>Adapun percobaannya seperti berikut:</p>
                                 <img src="images/tugas5/2.png" class="img-fluid mb-lg-3" alt="" class="mb-3"><br>
                                 <img src="images/tugas5/3.png" class="img-fluid mb-lg-3" alt="">
@@ -192,14 +190,12 @@
                                 <p>Adapun perintahnya sebagai berikut.</p>
                                 <p>Untuk user2 :</p>
                                 <code>CREATE USER user2@192.168.20.5 IDENTIFIED BY 'user2';<br>
-                                GRANT SELECT ON MovieIndustry12.* TO user2@192.168.20.5;<br>
-</code>
+                                GRANT SELECT ON MovieIndustry12.* TO user2@192.168.20.5;<br></code>
                                 <img src="images/tugas5/5.png" class="img-fluid mb-lg-3" alt="">
                                 <p>Dalam hal ini user2 hanya bisa menggunakan perintah SELECT pada setiap tabel di database MovieIndustry12;</p>
                                 <p>Untuk user3</p>
                                 <code>CREATE USER user3@192.168.20.5 IDENTIFIED BY 'user3';<br>
-                                GRANT SELECT ON MovieIndustry12.(satu table) TO user2@192.168.20.5;<br>
-</code>
+                                GRANT SELECT ON MovieIndustry12.(satu table) TO user2@192.168.20.5;<br></code>
                                 <img src="images/tugas5/6.png" class="img-fluid mb-lg-3" alt="">
                                 <p>User3 hanya bisa untuk menggunakan perintah select atau read database saja.</p>
                                 <p>Contohnya sebagai berikut :</p>
@@ -243,16 +239,13 @@
                                 dan Delete.</p>
                                 <p>Adapun perintahnya sebagai berikut.</p>
                                 <code>CREATE USER user1@192.168.20.3 IDENTIFIED BY 'user1';<br>
-                                GRANT CREATE,INSERT,SELECT,UPDATE, ON ujicoba.* TO user1@192.168.20.3;<br>
-</code>
+                                GRANT CREATE,INSERT,SELECT,UPDATE, ON ujicoba.* TO user1@192.168.20.3;<br></code>
                                 <img src="images/tugas5/15.png" class="img-fluid mb-lg-3" alt="">
                                 <code>CREATE USER user2@192.168.20.5 IDENTIFIED BY 'user2';<br>
-                                GRANT CREATE,INSERT,SELECT,UPDATE,DELETE ON ujicoba.* TO user2@192.168.20.5;<br>
-</code>
+                                GRANT CREATE,INSERT,SELECT,UPDATE,DELETE ON ujicoba.* TO user2@192.168.20.5;<br></code>
                                 <img src="images/tugas5/16.png" class="img-fluid mb-lg-3" alt="">
                                 <code>CREATE USER user3@192.168.20.6 IDENTIFIED BY 'user3';<br>
-                                GRANT SELECT ON ujicoba.* TO user3@192.168.20.6;<br>
-</code>
+                                GRANT SELECT ON ujicoba.* TO user3@192.168.20.6;<br></code>
                                 <img src="images/tugas5/17.png" class="img-fluid mb-lg-3" alt="">
                                 <p>Contoh implementasinya sebagai berikut.</p>
                                 <ol>
@@ -428,6 +421,7 @@
                     </div>
 
                 </div>
+            </div>
         </section><!-- End Blog Details Section -->
     </main><!-- End #main -->
 
