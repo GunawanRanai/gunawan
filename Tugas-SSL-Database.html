@@ -180,6 +180,7 @@
                                     menambahkan atau mengaktifkan koneksi ter-enkripsi pada MySQL dengan menuju lokasi file dengan perintah berikut.
                                 </p>
                                 <code>sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf</code>
+                                <br>
                                 <img src="images/SSL/1. konfigurasi ssl ca,cert,key.png" class="img-fluid mb-lg-3" alt="">
                                 <figcaption>Gambar 1 - konfigurasi SSL </figcaption>
                                 <p>file ini terdapat pada path /var/lib/mysql</p>
@@ -191,7 +192,7 @@
                                 <p>
                                     2. Selanjutnya kita bisa memverifikasi bahwa SSL pada MySQL sudah terinstall dengan menggunakan perintah berikut.
                                 </p>
-                                <code>show variables like '%ssl%';</code>
+                                <code>show variables like '%ssl%';</code><br>
                                 <img src="images/SSL/3. variable ssl.png" class="img-fluid mb-lg-3" alt="">
                                 <figcaption>Gambar 3 - Informasi Penerapan SSL pada MySQL </figcaption>
                                 <p>
@@ -218,12 +219,59 @@
                                 <figcaption>Gambar 6 - Koneksi tanpa SSL </figcaption>
                                 <p>Hal ini bertujuan agar koneksi yang digunakan tidak menggunakan SSL atau TLS sehingga bisa kita lakukan perbandingan
                                 antara koneksi HTTP dan HTTPS.</p>
+                                <p>
+                                    Dengan hasil penyadapan komunikasi seperti gambar dibawah ini.
+                                </p>
+                                <img src="images/SSL/7. hasil http.png" class="img-fluid mb-lg-3" alt="">
+                                <figcaption>Gambar 7 - Hasil Penyadapan Tanpa SSL </figcaption>
+                                <p>Pada HTTPS atau penggunaan SSL menggunakan perintah berikut. <br>
+                                <code>sudo tcpdump -i enp0s8 -s 65539 -w analisis_https.pcap</code></p><br>
+                                <img src="images/SSL/8. tcpdump httpsss.png" class="img-fluid mb-lg-3" alt="">
+                                <figcaption>Gambar 8 - tcpdump menggunakan SSL </figcaption>
+                                <img src="images/SSL/10. login httpss.pngclass="img-fluid mb-lg-3" alt="">
+                                <figcaption>Gambar 9 - Login pada MySQL menggunakan SSL </figcaption>
+                                <p>Maka akan didapatkan data komunikasi sebagai berikut.</p>
+                                <img src="images/SSL/11. hasil https.png" class="img-fluid mb-lg-3" alt="">
+                                <figcaption>Gambar 10 - Hasil Penyadapan Menggunakan SSL </figcaption>
+                                <p>Dimana saat menggunakan HTTP protokol MySQL sangat jelas terlihat, namun saat menggunakan HTTPS atau SSL terlihat
+                                komunikasi pada MySQL terlindungi oleh TLS. Dengan perbedaan yang dimiliki sebagai berikut</p>
+                                <p>Pada HTTP</p>
+                                <img src="images/SSL/12. bukti login req http.png" class="img-fluid mb-lg-3" alt="">
+                                <figcaption>Gambar 11- Data Login tanpa SSL</figcaption>
+                                <img src="images/SSL/13. bukti login req https.png" class="img-fluid mb-lg-3" alt="">
+                                <figcaption>Gambar 12 - Hasil Login Requset HTTP </figcaption>
+                                <p>Pada HTTPS</p>
+                                <img src="images/SSL/14. hexa http.png" class="img-fluid mb-lg-3" alt="">
+                                <figcaption>Gambar 13 - Data Hexadesimal pada HTTP</figcaption>
+                                <img src="images/SSL/15. hexa https.png" class="img-fluid mb-lg-3" alt="">
+                                <figcaption>Gambar 14 -  Data Hexadesimal pada HTTPS</figcaption>
+                                <p>
+                                    Ketika menggunakan SSL informasi informasi yang dimiliki dienkripsi sehingga tidak bisa dilihat saat proses komunikasi
+                                    terjadi.
+                                </p>
 
-
-
-
-                                <img src="images/SSL/" class="img-fluid mb-lg-3" alt="">
-                                <figcaption>Gambar 2 - Lokasi Sertifikat </figcaption>
+                                <h3 class="text-center">Perbandingan Performa Antara Penggunaan HTTP dan HTTPS</h3>
+                                <p>
+                                    Pengukuran perbandingan performa antara penggunaan MySQL secara HTTP dan HTTPS bisa dilakukan dengan memanfaatkan tools
+                                    mysqlslap. Mysqlslap merupakan tools yang dirancang untuk menirukan beban klien pada server MySQL dan melaporkan waktu
+                                    setiap tahapan yang dilewati. Berikut tahapan dan hasil yang dilaksanakan.
+                                </p>
+                                <p>
+                                    Perintah yang digunakan untuk mengukur performasi pada HTTP sebagai berikut.
+                                </p>
+                                <code>sudo mysqlslap --user=web1 --password --host=192.168.2.4 --concurrency=100 --iterations=100 --number-int-cols=5
+                                --number-char-cols=20 --auto-generate-sql --verbose –ssl-mode=DISABLED</code><br>
+                                <img src="images/SSL/16. performance http.png" class="img-fluid mb-lg-3" alt="">
+                                <figcaption>Gambar 16 - Cek Performa HTTP </figcaption>
+                                <p>
+                                    pada HTTPS, Perintah yang digunakan sama dengan penggunaan pada HTTP namun disini opion –ssl-mode dihapus agar ssl otomatis
+                                    diaktifkan kembali. Maka hasil yang didapatkan sebagai berikut.
+                                </p>
+                                <img src="images/SSL/17. peformance https.png" class="img-fluid mb-lg-3" alt="">
+                                <figcaption>Gambar 17 - Cek Performa HTTPS </figcaption>
+                                <p>Sehingga penggunaan SSL bisa mempengaruhi tingkat performa dari proses yang dilakukan, namun sebanding dengan tingkat
+                                keamanan yang telah diterapkan.</p>
+                                
                                 
                             </div><!-- End post content -->
 
