@@ -1,0 +1,28 @@
+
+Network Security
+Mengetahui tentang protokol jaringan, firewall, routing dan switching
+Penerapan Proxy Server
+Penerapan WAF (Mod Security)
+
+Operation System Security
+Pembangunan Arsitektur Komputer 
+Pengamanan pada Linux
+
+Cryptography
+Memahami dasar kriptografi seperti enkripsi, hashing, auntentikasi.
+Pemahaman mengenai pembuatan digital signature
+Penerapan Kriptografi pada Website
+
+Database Security
+Pemahaman pengoperasian database
+Pemahaman implementasi keamanan pada database
+
+Web Security
+Memahami pembuatan website (Laravel, Bootstrap, PHP Native)
+
+Lainnya
+Memahami Manajemen Risiko keamanan siber
+Memahami pengetahuan mengenai pemrograman (Python)
+
+Soon
+Penetration Testing
